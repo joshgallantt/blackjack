@@ -1,14 +1,5 @@
 from random import shuffle
 import os
-def clear_terminal():
-    return os.system('cls' if os.name == 'nt' else 'clear')
-
-ranks = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace')
-suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
-points = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'Jack':10,
-         'Queen':10, 'King':10, 'Ace':11}
-
-playing = True
 
 
 '''
@@ -274,11 +265,21 @@ def starting_chips():
                 continue
     return value
 
+
+def clear_terminal():
+    return os.system('cls' if os.name == 'nt' else 'clear')
+
 '''
 
 Game Starts here
 
 '''
+
+ranks = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace')
+suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
+points = {'2':2, '3':3, '4':4, '5':5, '6':6, '7':7, '8':8, '9':9, '10':10, 'Jack':10, 'Queen':10, 'King':10, 'Ace':11}
+
+playing = True
 
 clear_terminal()
 
