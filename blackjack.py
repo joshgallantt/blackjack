@@ -1,4 +1,7 @@
 from random import shuffle
+import os
+def clear_terminal():
+    return os.system('cls' if os.name == 'nt' else 'clear')
 
 ranks = ('2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace')
 suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
@@ -188,7 +191,7 @@ def hit_or_stand(deck,hand):
     while True:
 
         response = input("Hit or Stand? Enter 'h' or 's': ")
-        print ("\n" * 100)
+        clear_terminal()
         if response[0].lower() == 'h':
             hit(deck,hand)
             print("\nPlayer Hits..")
@@ -250,7 +253,7 @@ def take_bet(chips):
 
         try:
             chips.bet = int(input("\nHow many chips would you like to bet?: "))
-            print ("\n" * 100)
+            clear_terminal()
         except:
             print("\nSorry please provide an integer.")
         else:
@@ -262,7 +265,7 @@ def take_bet(chips):
 def starting_chips():
     while True:
             value = input('\nEnter many chips would you like to start with: ')
-            print ("\n" * 100)
+            clear_terminal()
             try:
                 value = int(value)
                 break
@@ -277,7 +280,8 @@ Game Starts here
 
 '''
 
-print ("\n" * 100)
+clear_terminal()
+
 print("\n\n\nWELCOME TO BLACKJACK by Josh\n\n")
 print("""\nBlackjack rules:
 
@@ -353,7 +357,7 @@ while game_on:
     new_game = input("\nWould you like to play another hand? Enter 'y': ")
     
     if new_game[0].lower()=='y':
-        print ("\n" * 100)
+        clear_terminal()
         playing = True
         continue
     else:
